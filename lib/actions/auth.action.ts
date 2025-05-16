@@ -1,7 +1,7 @@
 'use server'
 
 import { auth, db } from "@/firebase/admin";
-import { CollectionReference, DocumentData } from "firebase-admin/firestore";
+
 import { cookies } from "next/headers";
 
 export async function signUp(params: SignUpParams) {

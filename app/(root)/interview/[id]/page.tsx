@@ -1,3 +1,5 @@
+'use server';
+
 import Agent from '@/components/agent';
 import DisplayTechIcons from '@/components/DisplayTechIcons';
 import { getCurrentUser } from '@/lib/actions/auth.action';
@@ -27,8 +29,8 @@ const page = async ({params} : RouteParams) => {
                 </div>
                 <p className='bg-dark-200 px-4 py-2 rounded-lg h-fit capitalize'>{interview.type}</p>
             </div>
-            <Agent userName={user?.name} 
-                type = {user?.id}  
+            <Agent userName={user?.name || ''} 
+                userId = {user?.id}  
                 interviewId= {id}
                 type = 'interview'
                 questions = {interview.questions}
